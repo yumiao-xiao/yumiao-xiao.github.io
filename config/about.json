@@ -2,17 +2,13 @@
   "paragraphs": [
     [
       { "text": "Hi, I'm " },
-      { "text": "Shubo Xu", "strong": true },
-      { "text": " (aka " },
-      { "text": "Anleeno Xu", "strong": true },
-      { "text": "), an AI algorithm engineer and researcher working on " },
-      { "text": "computer vision, multimodal large language models, generative AI, and AI agents", "strong": true },
-      { "text": ". I’m interested in how intelligent systems perceive, reason, and act—and in translating research ideas into practical applications." }
+      { "text": "Yumiao Xiao", "strong": true },
+      { "text": ", a PhD student from the Hong Kong University of Science and Technology (Guangzhou)." }
     ],
     [
-      { "text": "I’m currently a " },
-      { "text": "Senior Algorithm Engineer at ByteDance" },
-      { "text": ", having previously worked at Baidu and Hello. Beyond work, I enjoy photography, travel, music, reading, anime, science fiction, philosophy, and meditation." }
+      { "text": "My research interests include " },
+      { "text": "terrestrial carbon cycling, urban systems and global change, and grassland ecology", "strong": true },
+      { "text": ", spanning from understanding natural carbon sink processes to tracking urban carbon emissions. By integrating field observational and experimental data with GIS and remote sensing, I leverage process-based ecosystem models, machine and deep learning, spatial statistics, and causal inference to understand these complex systems." }
     ]
   ],
   "quote": {
