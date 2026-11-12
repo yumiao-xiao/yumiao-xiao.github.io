@@ -61,6 +61,9 @@ export const publications = publicationItems.map((publication) => ({
   image: resolveAsset(publication.image),
 }));
 
+// 关闭时 Experience 区块和导航项都不显示；改回 true 即可恢复，experience.json 保持原样。
+export const showExperience = false;
+
 export const experiences = experienceItems.map((experience) => ({
   ...experience,
   logo: resolveAsset(experience.logo),

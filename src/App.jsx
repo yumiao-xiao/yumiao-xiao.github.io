@@ -9,6 +9,7 @@ import "./css/Typography.css";
 import News from "./components/News.jsx";
 import Projects from "./components/Projects.jsx";
 import AcademicBackground from "./components/AcademicBackground.jsx";
+import { showExperience } from "./siteConfig";
 
 function App() {
     return (
@@ -23,7 +24,7 @@ function App() {
                         <About />
                         <News />
                         <Publications />
-                        <Experience />
+                        {showExperience && <Experience />}
                         <AcademicBackground />
                         <Projects />
                     </div>

@@ -123,7 +123,7 @@ export default function Experience() {
 
     return () => cleanups.forEach((cleanup) => cleanup());
   }, []);
-
+  
   return (
     <section className="experience" id="experience">
       <div className="card-title">Experience</div>
