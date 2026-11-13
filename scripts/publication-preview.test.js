@@ -20,7 +20,8 @@ test("all custom layouts and a new paper without preview data render", async () 
       assert.equal((html.match(/id="study-abstract"/g) || []).length, 1);
       assert.ok(html.indexOf('id="study-abstract"') < html.indexOf('class="study-bottom"'));
       if (html.includes('aria-label="Method overview"')) assert.ok(html.indexOf('id="study-abstract"') < html.indexOf('aria-label="Method overview"'));
-      assert.match(html, /aria-haspopup="dialog"[^>]*>.*?Paper<\/button>/);
+      assert.doesNotMatch(html, /Paper<\/button>/);
+      assert.match(html, /Continue reading the full paper/);
       if (paper.id === "new-paper") {
         assert.match(html, /study--basic/);
         assert.match(html, /<details[^>]*open/);

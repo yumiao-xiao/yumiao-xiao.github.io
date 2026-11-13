@@ -56,7 +56,8 @@ test("layout-specific fields and unknown keys are checked", () => {
 
 test("fixed templates support minimal basic, narrative and legacy layout configs", () => {
   const config = loadConfigs();
-  config["publication-previews.json"] = { "dpc-vqa": { template: "basic", abstractExpanded: true } };
+  const paperId = config["publications.json"][0].id;
+  config["publication-previews.json"] = { [paperId]: { template: "basic", abstractExpanded: true } };
   assert.deepEqual(validateConfigs(config), []);
 
   const narrative = {
@@ -65,13 +66,13 @@ test("fixed templates support minimal basic, narrative and legacy layout configs
     steps: [{ title: "Step", text: "Text" }], blendFigureBackground: false,
     labels: { idea: "Research question" },
   };
-  config["publication-previews.json"]["dpc-vqa"] = { ...narrative };
+  config["publication-previews.json"][paperId] = { ...narrative };
   assert.deepEqual(validateConfigs(config), []);
 
-  delete config["publication-previews.json"]["dpc-vqa"].figure;
+  delete config["publication-previews.json"][paperId].figure;
   assert.match(validateConfigs(config).join("\n"), /figure: required for narrative/);
 
-  config["publication-previews.json"]["dpc-vqa"] = { ...narrative, layout: "narrative" };
-  delete config["publication-previews.json"]["dpc-vqa"].template;
+  config["publication-previews.json"][paperId] = { ...narrative, layout: "narrative" };
+  delete config["publication-previews.json"][paperId].template;
   assert.deepEqual(validateConfigs(config), []);
 });
