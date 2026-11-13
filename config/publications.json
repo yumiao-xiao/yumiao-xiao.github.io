@@ -6,11 +6,11 @@
     "abstract": "Aboveground net primary productivity (ANPP) of arid-adapted plants in xeric grasslands is reported to be more responsive to drought than that in mesic sites, yet whether this response is determined more by individual size (indicating growth rate of aboveground plant individual) or by individual density (indicating survival of aboveground plant individual) remains unclear. By using a global dataset consisting of concurrent in-situ community ANPP and individual density measurements, we partitioned the ANPP responses to drought into size (calculated by the ratio of ANPP to density) response and density response. Results showed that sensitivities of ANPP and plant size to drought significantly declined from xeric to mesic grasslands, while the sensitivity of plant density showed no significant regional variation. Hierarchical decomposition demonstrated that individual size contributed more than density to ANPP variations. Our findings suggest that plants in xeric grasslands resist drought stress largely through demographic stability and their high ANPP sensitivity is primarily driven by great plasticity in average individual performance, thereby exhibiting strong arid adaptation although with largely reduced production during drought periods. By linking the ecosystem-level ANPP dynamics to the underlying demographic and performance pathways, this study advances mechanistic understanding of grassland resilience under future climate extremes.",
     "authors": [
       {
-        "text": "Yumiao Xiao, ",
+        "text": "Yumiao Xiao",
         "strong": true
       },
       {
-        "text": "Bingwei Zhang, Marc W. Cadotte, Xiuchen Wu, Yuan Jiang, Shiping Chen, and Chengjin Chu"
+        "text": ", Bingwei Zhang, Marc W. Cadotte, Xiuchen Wu, Yuan Jiang, Shiping Chen, and Chengjin Chu"
       }
     ],
     "venue": "Ecology (In Press)",
@@ -32,7 +32,7 @@
     "abstract": "Vegetation dynamics in rapidly urbanizing regions reflect complex interactions among climate drivers and human pressures, yet current studies have not fully captured fine-scale spatiotemporal heterogeneity at the township level. Here, we presented the first systematic town-scale analysis of fractional vegetation coverage (FVC) across the Guangdong-Hong Kong-Macao Greater Bay Area (GBA) from 2000 to 2020. Leveraging a high-precision MultiVI-derived FVC dataset alongside five drivers: human footprint, precipitation, air temperature, soil moisture, and vapor pressure deficit, we decomposed FVC trajectories into three pathway metrics: mean cover, long-term trend, and interannual variability. We then applied Local Moran’s I to detect spatial clustering, Space-Time Cube and Emerging Spatiotemporal Hot Spot Analysis to map cold-hot spot evolution, Geographical Convergent Cross Mapping to infer causality, Geographically Weighted Regression to reveal spatial non-stationarity of each explanatory power, Geographically Optimal Zones-based Heterogeneity and Locally Explained Stratified Heterogeneity models to quantify driver interactions, and Structural Equation Modelling to disentangle direct and climate-meditated anthropogenic effects. Our results showed that precipitation primarily dominated the causal strength of all three FVC pathways across the GBA, while human footprint and atmospheric drought exerted significant secondary influences. For the FVC mean pathway, economically strong urban cores experienced temperature-mediated suppression offset partially by direct anthropogenic greening efforts, while economically weak peripheral towns relied on soil moisture. By contrast, human activities predominated directly FVC pathways of trend and variability in both strong and weak towns, which specifically suppressed the growth trend but promoted the stability from year to year. These insights suggest that cores should prioritize land use controls and climate-adaptive greening, while peripheries invest in water-management infrastructure. Our framework of systematic spatiotemporal statistics and causal inference offers a transferable approach for precision ecological governance in global megaregions.",
     "authors": [
       {
-        "text": "Yumiao Xiao, ",
+        "text": "Yumiao Xiao",
         "strong": true
       },
       {
@@ -57,7 +57,7 @@
     "abstract": "Precipitation manipulation experiments and long-term observations have been widely employed to examine the response of ecosystem productivity to changing precipitation. However, whether experiments accurately reflect natural responses remains questionable. Here, we conducted a global reality check analysis using paired datasets from 22 grassland sites that included both experimental and observational measurements. The results revealed that the sensitivity of aboveground net primary productivity (ANPP) to changing precipitation was lower in the experiments than in the observations in xeric grasslands. One potential reason is that the experiments fail to simulate the concurrent changes in air humidity that typically accompany natural precipitation events, thereby leading to the underestimation of the changing precipitation effect on ANPP. Conversely, in mesic grasslands, the ANPP sensitivity to experimental changing precipitation was greater than that in the observations likely because low radiation and temperature during the natural raining days have negative effects on ANPP when water is not limited. This study highlights the aridity-dependent bias of changing precipitation effects on ANPP in precipitation manipulation experiments in grasslands, which should be fully considered when conclusions from experiments are incorporated in model simulations.",
      "authors": [
       {
-        "text": "Yumiao Xiao, ",
+        "text": "Yumiao Xiao",
         "strong": true
       },
       {
