@@ -5,7 +5,7 @@ import { BsStars } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { SiHuggingface } from "react-icons/si";
 import { TbPhotoSearch } from "react-icons/tb";
-import { projects } from "../siteConfig";
+import { projects, showProjects } from "../siteConfig";
 import DailyPapers from "./DailyPapers";
 
 const actionDetails = {
@@ -77,29 +77,33 @@ function ProjectMeta({ meta }) {
 export default function Projects() {
   return (
     <section className="card projects-section" id="projects">
-      <div className="card-title">Selected Projects</div>
-      <div className="project-grid">
-        {projects.map((project) => (
-          <article className="project-card" key={project.title}>
-            <div className="project-media-frame">
-              <img className="project-media-backdrop" src={project.image} alt="" aria-hidden="true" />
-              <ProjectMedia project={project} />
-            </div>
-            <div className="project-body">
-              <ProjectMeta meta={project.meta} />
-              <h3>{project.title}</h3>
-              <p>{project.text}</p>
-              {project.note && <div className="project-note">{project.note}</div>}
-              <div className="project-actions">
-                <ProjectAction project={project} />
+      {showProjects && <>
+        <div className="card-title">Selected Projects</div>
+        <div className="project-grid">
+          {projects.map((project) => (
+            <article className="project-card" key={project.title}>
+              <div className="project-media-frame">
+                <img className="project-media-backdrop" src={project.image} alt="" aria-hidden="true" />
+                <ProjectMedia project={project} />
               </div>
-            </div>
-          </article>
-        ))}
-      </div>
+              <div className="project-body">
+                <ProjectMeta meta={project.meta} />
+                <h3>{project.title}</h3>
+                <p>{project.text}</p>
+                {project.note && <div className="project-note">{project.note}</div>}
+                <div className="project-actions">
+                  <ProjectAction project={project} />
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </>}
       <DailyPapers />
-      <div className="card-title portfolio-progress-title">More to Come</div>
-      <p className="portfolio-progress-text">My portfolio is still under construction—more stories are on the way.</p>
+      {showProjects && <>
+        <div className="card-title portfolio-progress-title">More to Come</div>
+        <p className="portfolio-progress-text">My portfolio is still under construction—more stories are on the way.</p>
+      </>}
     </section>
   );
 }

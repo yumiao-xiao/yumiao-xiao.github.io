@@ -1,57 +1,68 @@
 {
-  "name": "Shubo Xu",
-  "title": "Senior Algorithm Engineer",
-  "profileImage": "assets/anleeno-home-profile.png",
-  "brandLogo": "assets/anleeno-still-deer-script.png",
+  "name": "Yumiao Xiao",
+  "title": "PhD Student @ HKUST(GZ)",
+  "profileImage": "assets/yumiao-profile.jpg",
+  "brandLogo": "assets/samuel-cat-logo.png",
   "descriptions": [
     {
-      "icon": "openai",
-      "text": "CV & MLLM Researcher"
+      "text": "🌿 Terrestrial Carbon & Urban Ecology"
     },
     {
-      "icon": "sparkles",
-      "text": "AIGC & AI Agents Explorer"
+      "text": "🛰️ EcoAI & Causal Inference"
     },
     {
-      "icon": "camera",
-      "text": "Photography Enthusiast · Dreamer"
+      "text": "📷 Nature Observer · Travel Dreamer"
     }
   ],
   "primaryLinks": [
     {
+      "label": "Resume",
+      "url": "/Yumiao-Xiao-CV.pdf",
+      "preview": "pdf"
+    },
+    {
       "label": "Portfolio",
-      "url": "https://encore.anleeno.com"
+      "url": "https://encore.anleeno.com",
+      "enabled": false
     },
     {
       "label": "Soundscape",
-      "url": "https://encore.anleeno.com/music"
+      "url": "https://encore.anleeno.com/music",
+      "enabled": false
     }
   ],
   "socialLinks": [
     {
       "label": "Email",
       "icon": "email",
-      "url": "mailto:xushubo0805@gmail.com"
+      "url": "mailto:yxiao224@connect.hkust-gz.edu.cn"
     },
     {
       "label": "GitHub",
       "icon": "github",
-      "url": "https://github.com/Anleeno/anleeno-academic"
+      "url": "https://github.com/yumiao-xiao"
     },
     {
       "label": "Google Scholar",
       "icon": "scholar",
-      "url": "https://scholar.google.com/citations?hl=en&user=Ih094PwAAAAJ&view_op=list_works&sortby=pubdate"
+      "url": "https://scholar.google.com/citations?user=RuIYUtcAAAAJ&hl=en"
+    },
+    {
+      "label": "ResearchGate",
+      "icon": "researchgate",
+      "url": "https://www.researchgate.net/profile/Yumiao-Xiao"
     },
     {
       "label": "LinkedIn",
       "icon": "linkedin",
-      "url": "https://www.linkedin.com/in/anleeno0805"
+      "url": "https://www.linkedin.com/in/anleeno0805",
+      "enabled": false
     },
     {
       "label": "Instagram",
       "icon": "instagram",
-      "url": "https://www.instagram.com/anleeno_ss"
+      "url": "https://www.instagram.com/anleeno_ss",
+      "enabled": false
     }
   ]
 }

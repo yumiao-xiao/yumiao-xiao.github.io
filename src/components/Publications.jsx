@@ -1,26 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { AiOutlineCheck, AiOutlineCopy, AiOutlineFileText } from "react-icons/ai";
+import { AiOutlineFileText } from "react-icons/ai";
 import "../css/Publications.css";
 import { publications } from "../siteConfig";
 import PublicationPreview from "./PublicationPreview";
 import { fetchScholarCitations, resolveCitationCount } from "../utils/scholarCitations";
 
-function copyText(text) {
-  if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(text);
-  const input = document.createElement("textarea");
-  input.value = text;
-  input.style.position = "fixed";
-  input.style.opacity = "0";
-  document.body.appendChild(input);
-  input.select();
-  document.execCommand("copy");
-  input.remove();
-  return Promise.resolve();
-}
-
 export default function Publications() {
-  const [copiedPaper, setCopiedPaper] = useState("");
-  const [bursts, setBursts] = useState([]);
   const [citationMap, setCitationMap] = useState({});
   const [abstractPaper, setAbstractPaper] = useState(null);
 
@@ -32,26 +17,9 @@ export default function Publications() {
     return () => { active = false; };
   }, []);
 
-  const copyCitation = (paper, event, celebrate = true) => {
-    copyText(paper.citation).then(() => {
-      const burstId = `${paper.id}-${Date.now()}`;
-      setCopiedPaper(paper.id);
-      if (celebrate) setBursts((current) => [...current, { id: burstId, x: event.clientX, y: event.clientY }]);
-      window.setTimeout(() => setCopiedPaper((current) => current === paper.id ? "" : current), 1400);
-      window.setTimeout(() => setBursts((current) => current.filter((burst) => burst.id !== burstId)), 900);
-    }).catch(() => {});
-  };
-
   return (
     <section id="publications">
-      <div className="publication-fireworks" aria-hidden="true">
-        {bursts.map((burst) => (
-          <span className="publication-firework" style={{ left: burst.x, top: burst.y }} key={burst.id}>
-            {Array.from({ length: 10 }).map((_, index) => <i style={{ "--particle-angle": `${index * 36}deg` }} key={index} />)}
-          </span>
-        ))}
-      </div>
-      <div className="card-title">Publications</div>
+      <div className="card-title">Selected Publications</div>
       <div className="publications-list">
         {publications.map((paper) => {
           const citationCount = resolveCitationCount(paper.title, citationMap);
@@ -80,18 +48,13 @@ export default function Publications() {
               <div className="publication-tags">{paper.tags.map((tag) => <span className="tag-item-show" key={tag}>{tag}</span>)}</div>
               <div className="publication-links">
                 <a href={paper.link} target="_blank" rel="noreferrer"><AiOutlineFileText aria-hidden="true" />Paper</a>
-                <button className={`publication-cite${copiedPaper === paper.id ? " is-copied" : ""}`} type="button" onClick={(event) => copyCitation(paper, event)}>
-                  {copiedPaper === paper.id ? <AiOutlineCheck aria-hidden="true" /> : <AiOutlineCopy aria-hidden="true" />}
-                  {copiedPaper === paper.id ? "Copied" : "Cite"}
-                </button>
-                <span className="publication-citation-preview">{paper.citation}</span>
               </div>
             </div>
           </article>
           );
         })}
       </div>
-      {abstractPaper && <PublicationPreview paper={abstractPaper} papers={publications} onChange={setAbstractPaper} onClose={() => setAbstractPaper(null)} onCopy={copyCitation} copied={copiedPaper} />}
+      {abstractPaper && <PublicationPreview paper={abstractPaper} papers={publications} onChange={setAbstractPaper} onClose={() => setAbstractPaper(null)} />}
     </section>
   );
 }

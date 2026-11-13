@@ -1,4 +1,4 @@
-.academic-section { margin: 1rem 0; scroll-margin-top: 80px; text-align: left; }
+.academic-section { margin: 2rem 0 1rem; scroll-margin-top: 80px; text-align: left; }
 .academic-section > .card-title { margin: 0 0 .3rem; line-height: 1.15; }
 .academic-list { list-style: none; padding: 0; margin: 0; }
 .academic-details { min-width: 0; }
@@ -15,6 +15,13 @@
 .education-degree { color: var(--theme-text-color); font-size: .85rem; line-height: 1.5; }
 .education-period { color: #797d88; font-size: .74rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .academic-location { grid-column: 2; color: #797d88; font-size: .75rem; margin-top: .3rem; }
+
+/* Advisor and lab links under each degree. */
+.education-advisors { margin: .3rem 0 0; color: #5a5f73; font-size: .8rem; line-height: 1.6; text-align: left; }
+.education-advisor-label { color: #797d88; font-size: .74rem; }
+.education-advisors a { color: var(--theme-text-color); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .18s; }
+.education-advisors a:hover { border-bottom-color: currentColor; }
+.education-advisor-sep { color: #9aa0ad; }
 
 /* Compact honors rows align with the education text without adding card chrome. */
 .awards-list { display: grid; gap: 0; padding: .1rem .9rem; }

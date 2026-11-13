@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Award, GraduationCap, BookOpen, BriefcaseBusiness, FolderKanban, Newspaper, UserRound } from "lucide-react";
 import "../css/Header.css";
-import { hero, education, awards, isSectionVisible, showExperience } from "../siteConfig";
+import { hero, education, awards, isSectionVisible, showExperience, showProjects } from "../siteConfig";
 import recommendations from "../../config/paper-recommendations.json";
 import { isDailyPapersVisible } from "../utils/sectionVisibility";
 
@@ -19,8 +19,8 @@ const NAV = [
   ...(showExperience ? [{ id: "experience", label: "Experience", icon: BriefcaseBusiness }] : []),
   ...(isSectionVisible(education) ? [{ id: "education", label: "Education", icon: GraduationCap }] : []),
   ...(isSectionVisible(awards) ? [{ id: "awards", label: "Awards", icon: Award }] : []),
-  { id: "projects", label: "Projects", icon: FolderKanban },
-  ...(isDailyPapersVisible(recommendations) ? [{ id: "daily-papers", label: "Trends", icon: DailyPaperIcon }] : []),
+  ...(showProjects ? [{ id: "projects", label: "Projects", icon: FolderKanban }] : []),
+  ...(isDailyPapersVisible(recommendations) ? [{ id: "daily-papers", label: recommendations.daily?.navLabel || "Trends", icon: DailyPaperIcon }] : []),
 ];
 
 export default function Header() {

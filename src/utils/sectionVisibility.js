@@ -1,4 +1,6 @@
 export function isDailyPapersVisible(config) {
-  return config.enabled === true && config.daily?.enabled === true &&
-    Array.isArray(config.daily.keywords) && config.daily.keywords.length > 0;
+  const daily = config.daily;
+  const hasCurated = Array.isArray(daily?.papers) && daily.papers.length > 0;
+  const hasKeywords = Array.isArray(daily?.keywords) && daily.keywords.length > 0;
+  return config.enabled === true && daily?.enabled === true && (hasCurated || hasKeywords);
 }

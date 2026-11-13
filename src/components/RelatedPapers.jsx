@@ -103,8 +103,8 @@ export default function RelatedPapers({ paper, onOpen, daily = false }) {
     return () => { active = false; clearTimeout(timer); controller.abort(); };
   }, [enabled, visible, endpoint, paper.id, paper.link, paper.pdfUrl, retry, limit, keywordKey, daily, expanded]);
   if (!enabled) return null;
-  return <section id={daily ? "daily-papers" : undefined} ref={section} className={`related-papers${daily ? " daily-papers" : ""}`} aria-label={`${daily ? "Daily" : "Related"} papers from ${endpoint ? "arXiv" : "Hugging Face"}`}>
-    <div className="related-heading">{daily ? <h2 className="card-title">Daily Papers</h2> : <h3>RELATED PAPERS</h3>}</div>
+  return <section id={daily ? "daily-papers" : undefined} ref={section} className={`related-papers${daily ? " daily-papers" : ""}`} aria-label={`${daily ? (config.daily?.title || "Daily Papers") : "Related papers"} from ${endpoint ? "arXiv" : "Hugging Face"}`}>
+    <div className="related-heading">{daily ? <h2 className="card-title">{config.daily?.title || "Daily Papers"}</h2> : <h3>RELATED PAPERS</h3>}</div>
     <div className="related-meta-row">
       <div className="related-keywords related-keyword-tags" aria-label={daily ? "Search keywords" : "Paper keywords"}>{(daily ? keywords : paperKeywords).map(keyword => <span className="related-keyword-tag" key={keyword}>{keyword}</span>)}</div>
       {result?.fetchedAt && <p className="related-updated">Fetched {new Date(result.fetchedAt).toLocaleString()}</p>}

@@ -1,15 +1,11 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { useModalDialog } from "../hooks/useModalDialog";
-import { ArrowLeft, ArrowRight, X, Maximize2, Minus, FileText, BookOpen, Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight, X, Maximize2, Minus, BookOpen } from "lucide-react";
 import "@fontsource-variable/newsreader/wght.css";
 import { publicationPreviews as stories } from "../siteConfig";
 import "../css/PublicationPreview.css";
 import "../css/PaperWindow.css";
 import { publicationTemplates, resolvePublicationPreview } from "../utils/publicationTemplates";
-import RelatedPapers from "./RelatedPapers";
-
-import PdfPreview from "./PdfPreview";
-import { loadPdfDocument } from "../utils/loadPdfDocument";
 
 function MetricBars({ rows, title, percent = false }) {
   return <div className="metric-bars"><h4>{title}</h4><p className="metric-scale">{percent ? "Accuracy · 0–100%" : "Correlation · 0–1"}</p>
@@ -37,17 +33,11 @@ function BudgetChart({ rows, title }) {
   </figure>;
 }
 
-export default function PublicationPreview({ paper, papers, onChange, onClose, onCopy, copied }) {
+export default function PublicationPreview({ paper, papers, onChange, onClose }) {
   const dialog = useRef(null);
   useModalDialog(dialog);
   const scrollArea = useRef(null);
   const [expanded, setExpanded] = useState(false);
-  const [pdfOpen, setPdfOpen] = useState(false);
-  useEffect(() => { void loadPdfDocument().catch(() => {}); }, []);
-  const paperButton = useRef(null);
-  const returnFocus = useRef(null);
-  const pointerOpened = useRef(false);
-  const [relatedPdf, setRelatedPdf] = useState(null);
   const story = resolvePublicationPreview(paper, stories[paper.id]);
   const layout = story.template;
   const index = papers.findIndex(item => item.id === paper.id);
@@ -75,7 +65,7 @@ export default function PublicationPreview({ paper, papers, onChange, onClose, o
     <figcaption><span>{story.figureCaption}</span><button type="button" aria-expanded={expanded} onClick={() => setExpanded(value => !value)}>{expanded ? <Minus /> : <Maximize2 />}{expanded ? "Fit figure" : "Enlarge"}</button></figcaption>
   </figure>;
 
-  return <><dialog className={`research-preview study--${publicationTemplates[layout]?.className ?? "basic"}`} ref={dialog} onPointerDownCapture={() => { pointerOpened.current = true; }} onKeyDownCapture={() => { pointerOpened.current = false; }} aria-labelledby="research-paper-title" onCancel={onClose} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
+  return <><dialog className={`research-preview study--${publicationTemplates[layout]?.className ?? "basic"}`} ref={dialog} aria-labelledby="research-paper-title" onCancel={onClose} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
     <svg className="study-image-filters" aria-hidden="true" width="0" height="0">
       <defs>
         <filter id="study-remove-white" colorInterpolationFilters="sRGB">
@@ -104,9 +94,7 @@ export default function PublicationPreview({ paper, papers, onChange, onClose, o
         <div className="study-byline">
         <p className="study-authors">{paper.authors.map((author, i) => author.strong ? <strong key={i}>{author.text}</strong> : <React.Fragment key={i}>{author.text}</React.Fragment>)}</p>
         <div className="study-resources">
-          <button ref={paperButton} type="button" onClick={() => setPdfOpen(true)} aria-haspopup="dialog"><FileText aria-hidden="true" />Paper</button>
           {story.source !== paper.link && <a href={story.source} target="_blank" rel="noreferrer"><BookOpen aria-hidden="true" />Full text</a>}
-          <button type="button" onClick={event => onCopy(paper, event, false)}><Quote aria-hidden="true" /><span aria-live="polite">{copied === paper.id ? "Copied" : "Cite"}</span></button>
         </div>
         </div>
       </div>
@@ -166,10 +154,8 @@ export default function PublicationPreview({ paper, papers, onChange, onClose, o
         </section>}
         </>}
         <div className="study-bottom"><span>{paper.venue}</span><a href={story.source} target="_blank" rel="noreferrer">Continue reading the full paper</a></div>
-        <RelatedPapers key={`related-${paper.id}`} paper={paper} onOpen={(item, button) => { returnFocus.current = button; setRelatedPdf(item); setPdfOpen(true); }} />
       </div>
     </div>
   </dialog>
-  {pdfOpen && <PdfPreview key={relatedPdf?.id || paper.id} url={relatedPdf?.pdfUrl || paper.pdfUrl || paper.link} name={relatedPdf?.title || paper.title} kind="paper" onClose={() => { setPdfOpen(false); setRelatedPdf(null); const target = pointerOpened.current ? dialog.current : (returnFocus.current || paperButton.current); returnFocus.current = null; requestAnimationFrame(() => target?.focus({ preventScroll: true })); }} />}
   </>;
 }

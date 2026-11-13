@@ -4,17 +4,43 @@
     {
       "institution": "The Hong Kong University of Science and Technology (Guangzhou)",
       "degree": "PhD Student",
-      "period": "2026 – Present"
+      "period": "2026 – Present",
+      "advisors": [
+        {
+          "name": "Dr. Jiangong Liu",
+          "url": "https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page?id=556",
+          "lab": "EcoAI Lab",
+          "labUrl": "https://jiangongliu.com/"
+        }
+      ]
     },
     {
       "institution": "The Hong Kong University of Science and Technology (Guangzhou)",
       "degree": "MPhil",
-      "period": "2024 – 2026"
+      "period": "2024 – 2026",
+      "advisors": [
+        {
+          "name": "Dr. Wufan Zhao",
+          "url": "https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page?id=383",
+          "lab": "AI4City Lab",
+          "labUrl": "https://www.ai4dcity.com/"
+        }
+      ]
     },
     {
       "institution": "Beijing Normal University",
       "degree": "BSc",
-      "period": "2020 – 2024"
+      "period": "2020 – 2024",
+      "advisors": [
+        {
+          "name": "Dr. Bingwei Zhang",
+          "url": "https://fas.bnu.edu.cn/jyjg/xsgk/dlx1/xsszdl/dlfx2/0380c5c843be4c6c85b87254b00e8552.htm"
+        },
+        {
+          "name": "Dr. Yang Yang",
+          "url": "https://fas.bnu.edu.cn/jyjg/xsgk/dlx1/xsszdl/dlzj/d032491ed7d847308aacdaabb89e87ab.htm"
+        }
+      ]
     }
   ]
 }

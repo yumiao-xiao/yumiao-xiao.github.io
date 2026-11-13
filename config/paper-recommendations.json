@@ -5,7 +5,53 @@
   "cacheMinutes": 30,
   "daily": {
     "enabled": true,
+    "title": "Key Literature",
+    "navLabel": "Literature",
     "limit": 4,
-    "keywords": ["Large Language Model", "Reinforcement Learning", "Multimodal", "AI Agents", "AIGC"]
+    "keywords": ["Drought Sensitivity", "Convergent Cross Mapping", "Knowledge-Guided Machine Learning", "Artificial Light at Night", "Groundwater", "Diurnal Rhythm"],
+    "papers": [
+      {
+        "title": "Field experiments underestimate aboveground biomass response to drought",
+        "authors": "G. Kröel-Dulay et al.",
+        "source": "Nature Ecology & Evolution",
+        "url": "https://doi.org/10.1038/s41559-022-01685-3"
+      },
+      {
+        "title": "Convergence across biomes to a common rain-use efficiency",
+        "authors": "T. E. Huxman et al.",
+        "source": "Nature",
+        "url": "https://doi.org/10.1038/nature02561"
+      },
+      {
+        "title": "Detecting Causality in Complex Ecosystems",
+        "authors": "G. Sugihara et al.",
+        "source": "Science",
+        "url": "https://doi.org/10.1126/science.1227079"
+      },
+      {
+        "title": "Hybrid physics–AI modeling in hydrogeology: a review of concepts, applications, and challenges",
+        "authors": "D. Secci, V. Todaro & J. J. Gómez-Hernández",
+        "source": "Journal of Hydrology",
+        "url": "https://doi.org/10.1016/j.jhydrol.2026.136499"
+      },
+      {
+        "title": "Widespread influence of artificial light at night on ecosystem metabolism",
+        "authors": "A. S. A. Johnston, J. Kim & J. A. Harris",
+        "source": "Nature Climate Change",
+        "url": "https://doi.org/10.1038/s41558-025-02481-0"
+      },
+      {
+        "title": "Rapid groundwater decline and some cases of recovery in aquifers globally",
+        "authors": "S. Jasechko et al.",
+        "source": "Nature",
+        "url": "https://doi.org/10.1038/s41586-023-06879-8"
+      },
+      {
+        "title": "Partitioning the biodiversity effects on productivity into density and size components",
+        "authors": "S. Tatsumi & M. Loreau",
+        "source": "Ecology Letters",
+        "url": "https://doi.org/10.1111/ele.14300"
+      }
+    ]
   }
 }

@@ -12,6 +12,14 @@ export default function AcademicBackground() {
           <div className="academic-details">
             <div className="academic-item-heading"><h3>{item.institution}</h3></div>
             <div className="education-meta">{item.degree && <span className="education-degree">{item.degree}</span>}{item.period && <span className="education-period">{item.period}</span>}</div>
+            {item.advisors?.length > 0 && <p className="education-advisors">
+              <span className="education-advisor-label">{item.advisors.length > 1 ? "Advisors" : "Advisor"}:</span>{" "}
+              {item.advisors.map((advisor, index) => <span key={advisor.name}>
+                {index > 0 && <span className="education-advisor-sep">, </span>}
+                {advisor.url ? <a href={advisor.url} target="_blank" rel="noreferrer">{advisor.name}</a> : advisor.name}
+                {advisor.lab && <span className="education-lab"> · {advisor.labUrl ? <a href={advisor.labUrl} target="_blank" rel="noreferrer">{advisor.lab}</a> : advisor.lab}</span>}
+              </span>)}
+            </p>}
             {item.field && <p className="academic-subtitle">{item.field}</p>}
             {item.description && <p className="academic-description">{item.description}</p>}
           </div>

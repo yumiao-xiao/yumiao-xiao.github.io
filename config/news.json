@@ -1,62 +1,78 @@
 [
   {
-    "date": "2026.08",
+    "date": "2026.10.01",
     "segments": [
-      {
-        "text": "Joined "
-      },
-      {
-        "text": "ByteDance",
-        "strong": true
-      },
-      {
-        "text": ", focusing on MLLMs and Agents."
-      }
+      { "text": "My paper on " },
+      { "text": "density-size trade-offs", "strong": true },
+      { "text": " was accepted by " },
+      { "text": "Ecology", "strong": true },
+      { "text": "." }
     ]
   },
   {
-    "date": "2026.07",
+    "date": "2026.07.25",
     "segments": [
-      {
-        "text": "Our paper "
-      },
-      {
-        "text": "DPC-VQA",
-        "href": "https://arxiv.org/pdf/2604.12813"
-      },
-      {
-        "text": " was accepted by ACM MM'26."
-      }
+      { "text": "Passed my " },
+      { "text": "MPhil thesis defense", "strong": true },
+      { "text": "." }
     ]
   },
   {
-    "date": "2026.01",
+    "date": "2026.01.23",
     "segments": [
-      {
-        "text": "Released the preprint "
-      },
-      {
-        "text": "LEAF",
-        "href": "https://arxiv.org/pdf/2601.20689"
-      },
-      {
-        "text": ", a label-efficient image quality assessment framework."
-      }
+      { "text": "My paper on " },
+      { "text": "causal pathways of fractional vegetation cover (FVC)", "strong": true },
+      { "text": " was accepted by " },
+      { "text": "GIScience & Remote Sensing", "strong": true },
+      { "text": "." }
     ]
   },
   {
-    "date": "2025.07",
+    "date": "2025.08.07",
     "segments": [
-      {
-        "text": "Our team placed "
-      },
-      {
-        "text": "Top 2",
-        "strong": true
-      },
-      {
-        "text": " in the VQualA 2025 Challenge; the report appeared at the ICCV workshop."
-      }
+      { "text": "I attended the conference " },
+      { "text": "IEEE International Geoscience and Remote Sensing Symposium (IGARSS 2025)", "strong": true },
+      { "text": " in Brisbane, Australia and delivered an oral presentation " },
+      { "text": "''Exploring multiscale variations in greenspace exposure drivers: A perspective on the modifiable areal unit problem''", "strong": true },
+      { "text": "." }
+    ]
+  },
+  {
+    "date": "2025.07.10",
+    "segments": [
+      { "text": "My paper on " },
+      { "text": "observation-experiment comparisons", "strong": true },
+      { "text": " was accepted by " },
+      { "text": "Ecology", "strong": true },
+      { "text": "." }
+    ]
+  },
+  {
+    "date": "2025.03.20",
+    "segments": [
+      { "text": "My paper on " },
+      { "text": "greenspace exposure drivers", "strong": true },
+      { "text": " was accepted by " },
+      { "text": "IEEE International Geoscience and Remote Sensing Symposium (IGARSS 2025)", "strong": true },
+      { "text": "." }
+    ]
+  },
+  {
+    "date": "2024.05.09",
+    "segments": [
+      { "text": "Passed my " },
+      { "text": "undergraduate thesis defense", "strong": true },
+      { "text": "." }
+    ]
+  },
+  {
+    "date": "2024.03.20",
+    "segments": [
+      { "text": "My paper on " },
+      { "text": "land use mapping by UAV", "strong": true },
+      { "text": " was accepted by " },
+      { "text": "Education of Geography", "strong": true },
+      { "text": "." }
     ]
   }
 ]

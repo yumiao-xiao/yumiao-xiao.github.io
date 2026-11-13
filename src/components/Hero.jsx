@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaGoogleScholar } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { RiInstagramFill } from "react-icons/ri";
+import { SiResearchgate } from "react-icons/si";
 import { TbBrandOpenai } from "react-icons/tb";
 import { Camera, Sparkles } from "lucide-react";
 import { hero } from "../siteConfig";
@@ -22,6 +23,7 @@ const socialIcons = {
   scholar: FaGoogleScholar,
   linkedin: FaLinkedin,
   instagram: RiInstagramFill,
+  researchgate: SiResearchgate,
 };
 
 export default function Hero() {
@@ -38,13 +40,13 @@ export default function Hero() {
           })}
         </div>
         <div className="meta-link">
-          {hero.primaryLinks.map((link) => <a className="meta-linkitem" href={link.url} target="_blank" rel="noreferrer" key={link.label}
+          {hero.primaryLinks.filter((link) => link.enabled !== false).map((link) => <a className="meta-linkitem" href={link.url} target="_blank" rel="noreferrer" key={link.label}
             aria-haspopup={link.preview === "pdf" ? "dialog" : undefined}
             onPointerEnter={() => { if (link.preview === "pdf") void loadResumePreview(); }}
             onFocus={() => { if (link.preview === "pdf") void loadResumePreview(); }}
             onClick={event => { if (link.preview === "pdf" && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) { event.preventDefault(); setPreview(link); } }}>{link.label}</a>)}
         </div>
-        <div className="contact-small">{hero.socialLinks.map((item) => {
+        <div className="contact-small">{hero.socialLinks.filter((item) => item.enabled !== false).map((item) => {
           const Icon = socialIcons[item.icon];
           return <a key={item.label} aria-label={item.label} title={item.label} href={item.url} target="_blank" rel="noreferrer" className="icon-link">{Icon && <Icon />}</a>;
         })}</div>

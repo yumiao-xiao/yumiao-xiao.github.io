@@ -58,3 +58,26 @@
   .daily-papers .related-card { padding: 12px; gap: 12px; }
   .daily-papers + .portfolio-progress-title { margin-top: 16px; }
 }
+
+/* Curated reading list */
+.literature-list { display: grid; gap: 0; margin: .35rem 0 0; padding: 0; list-style: none; }
+.literature-item {
+  display: grid; grid-template-columns: minmax(0, 1fr) 16px; align-items: center; gap: 12px;
+  padding: 11px 2px; border-bottom: 1px dashed var(--study-line);
+  color: var(--study-ink); text-decoration: none;
+}
+.literature-item:last-child { border-bottom: 0; }
+.literature-text { display: grid; gap: 3px; min-width: 0; }
+.literature-title { font-size: 14px; font-weight: 500; line-height: 1.5; transition: color .18s; }
+.literature-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px; font-size: 11px; line-height: 1.5; }
+.literature-authors { color: #4f5468; }
+.literature-sep { color: #b3b6c4; }
+.literature-source { color: var(--study-muted); }
+.literature-icon { width: 13px; height: 13px; color: var(--theme-color-soft); stroke-width: 1.7; transition: color .18s; }
+.literature-item:hover .literature-title,
+.literature-item:hover .literature-icon { color: var(--theme-text-color); }
+.literature-item:focus-visible { outline: 2px solid var(--theme-color-soft); outline-offset: 2px; border-radius: 4px; }
+@media (max-width: 600px) {
+  .literature-item { padding: 10px 2px; }
+  .literature-title { font-size: 13px; }
+}

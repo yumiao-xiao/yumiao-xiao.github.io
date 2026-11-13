@@ -30,7 +30,7 @@ function resolveAsset(path) {
 export { newsItems };
 export const site = siteData;
 
-export const scholarProfileUrl = heroData.socialLinks.find(link => link.icon === "scholar")?.url;
+export const scholarProfileUrl = heroData.socialLinks.find(link => link.icon === "scholar" && link.enabled !== false)?.url;
 export const publicationPreviews = Object.fromEntries(
   Object.entries(previewItems).map(([id, preview]) => [id, {
     ...preview,
@@ -63,6 +63,9 @@ export const publications = publicationItems.map((publication) => ({
 
 // 关闭时 Experience 区块和导航项都不显示；改回 true 即可恢复，experience.json 保持原样。
 export const showExperience = false;
+
+// 关闭时 Selected Projects 区块和导航项都不显示；Key Literature 仍然显示。改回 true 即可恢复。
+export const showProjects = false;
 
 export const experiences = experienceItems.map((experience) => ({
   ...experience,

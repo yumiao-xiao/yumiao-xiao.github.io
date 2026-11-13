@@ -11,8 +11,19 @@
           "required": ["enabled", "limit", "keywords"],
           "properties": {
             "enabled": { "type": "boolean" },
+            "title": { "$ref": "#/$defs/text", "description": "Section heading shown above the recommended papers." },
+            "navLabel": { "$ref": "#/$defs/text", "description": "Navigation label for the recommended-papers section." },
             "limit": { "type": "integer", "minimum": 1, "maximum": 6 },
-            "keywords": { "type": "array", "minItems": 1, "maxItems": 5, "uniqueItems": true, "items": { "type": "string", "minLength": 2, "maxLength": 100 } }
+            "keywords": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 2, "maxLength": 100 } },
+            "papers": { "type": "array", "description": "Optional curated reading list. When present, it replaces the live paper search.", "items": {
+              "type": "object", "additionalProperties": false, "required": ["title", "url"],
+              "properties": {
+                "title": { "$ref": "#/$defs/text" },
+                "authors": { "$ref": "#/$defs/text" },
+                "source": { "$ref": "#/$defs/text" },
+                "url": { "$ref": "#/$defs/link" }
+              }
+            } }
           }
         },
         "endpoint": { "type": "string", "pattern": "^(https://[^\\s]+)?$" },
@@ -45,17 +56,17 @@
         "name": { "$ref": "#/$defs/text" }, "title": { "$ref": "#/$defs/text" },
         "profileImage": { "$ref": "#/$defs/asset" }, "brandLogo": { "$ref": "#/$defs/asset" },
         "descriptions": { "type": "array", "items": {
-          "type": "object", "additionalProperties": false, "required": ["icon", "text"],
-          "properties": { "icon": { "$ref": "#/$defs/text" }, "text": { "$ref": "#/$defs/text" } }
+          "type": "object", "additionalProperties": false, "required": ["text"],
+          "properties": { "icon": { "$ref": "#/$defs/text", "description": "Optional built-in icon: openai, sparkles, or camera. Omit when the text starts with an emoji." }, "text": { "$ref": "#/$defs/text" } }
         } },
         "primaryLinks": { "type": "array", "items": {
           "type": "object", "additionalProperties": false, "required": ["label"],
-          "properties": { "label": { "$ref": "#/$defs/text" }, "url": { "$ref": "#/$defs/link" }, "asset": { "$ref": "#/$defs/asset" }, "preview": { "enum": ["pdf"], "description": "Open this link in the custom PDF preview dialog." } },
+          "properties": { "label": { "$ref": "#/$defs/text" }, "url": { "$ref": "#/$defs/link" }, "asset": { "$ref": "#/$defs/asset" }, "preview": { "enum": ["pdf"], "description": "Open this link in the custom PDF preview dialog." }, "enabled": { "type": "boolean", "description": "Set to false to hide this link without deleting it." } },
           "oneOf": [{ "required": ["url"] }, { "required": ["asset"] }]
         } },
         "socialLinks": { "type": "array", "items": {
           "type": "object", "additionalProperties": false, "required": ["label", "icon", "url"],
-          "properties": { "label": { "$ref": "#/$defs/text" }, "icon": { "$ref": "#/$defs/text" }, "url": { "$ref": "#/$defs/link" } }
+          "properties": { "label": { "$ref": "#/$defs/text" }, "icon": { "$ref": "#/$defs/text" }, "url": { "$ref": "#/$defs/link" }, "enabled": { "type": "boolean", "description": "Set to false to hide this link without deleting it." } }
         } }
       }
     },
@@ -102,7 +113,21 @@
       "type": "object", "additionalProperties": false, "required": ["enabled", "items"],
       "properties": { "enabled": { "type": "boolean" }, "items": { "type": "array", "items": {
         "type": "object", "additionalProperties": false, "required": ["institution"],
-        "properties": { "institution": { "$ref": "#/$defs/text" }, "degree": { "type": "string" }, "field": { "type": "string" }, "period": { "type": "string" }, "location": { "type": "string" }, "description": { "type": "string" } }
+        "properties": {
+          "institution": { "$ref": "#/$defs/text" }, "degree": { "type": "string" }, "field": { "type": "string" }, "period": { "type": "string" }, "location": { "type": "string" }, "description": { "type": "string" },
+          "advisors": {
+            "type": "array",
+            "items": {
+              "type": "object", "additionalProperties": false, "required": ["name"],
+              "properties": {
+                "name": { "$ref": "#/$defs/text" },
+                "url": { "$ref": "#/$defs/link" },
+                "lab": { "$ref": "#/$defs/text" },
+                "labUrl": { "$ref": "#/$defs/link" }
+              }
+            }
+          }
+        }
       } } }
     },
     "awards": {
