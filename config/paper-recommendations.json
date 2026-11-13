@@ -8,7 +8,7 @@
     "title": "Key Literature",
     "navLabel": "Literature",
     "limit": 4,
-    "keywords": ["Drought Sensitivity", "Convergent Cross Mapping", "Knowledge-Guided Machine Learning", "Artificial Light at Night", "Groundwater", "Diurnal Rhythm"],
+    "keywords": ["Drought Sensitivity", "Convergent Cross Mapping", "Knowledge-Guided Machine Learning", "Artificial Light at Night", "Three-Dimensional (3D) Urban Expansion", "Groundwater", "Diurnal Rhythm"],
     "papers": [
       {
         "title": "Field experiments underestimate aboveground biomass response to drought",
@@ -51,6 +51,12 @@
         "authors": "S. Tatsumi & M. Loreau",
         "source": "Ecology Letters",
         "url": "https://doi.org/10.1111/ele.14300"
+      },
+      {
+        "title": "Global urban structural growth shows a profound shift from spreading out to building up",
+        "authors": "S. Frolking et al.",
+        "source": "Nature Cities",
+        "url": "https://doi.org/10.1038/s44284-024-00100-1"
       }
     ]
   }
